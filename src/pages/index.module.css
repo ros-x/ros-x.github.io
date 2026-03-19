@@ -21,3 +21,17 @@
   align-items: center;
   justify-content: center;
 }
+
+.features {
+  padding: 3rem 0;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.featureCard {
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.featureCard h3 {
+  margin-bottom: 0.5rem;
+}

@@ -21,7 +21,11 @@ const config: Config = {
 
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'zh-Hans'],
+    localeConfigs: {
+      en: { label: 'English', htmlLang: 'en' },
+      'zh-Hans': { label: '简体中文', htmlLang: 'zh-Hans' },
+    },
   },
 
   presets: [
@@ -42,7 +46,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/social-card.png',
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -59,10 +63,13 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
-        // {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/ros-x',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          type: 'localeDropdown',
           position: 'right',
         },
       ],
@@ -110,6 +117,10 @@ const config: Config = {
             {
               label: 'GitHub',
               href: 'https://github.com/ros-x',
+            },
+            {
+              label: 'xlings',
+              href: 'https://github.com/d2learn/xlings',
             },
           ],
         },

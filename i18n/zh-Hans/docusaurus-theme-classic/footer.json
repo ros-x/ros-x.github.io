@@ -1,0 +1,50 @@
+{
+  "link.title.Projects": {
+    "message": "项目",
+    "description": "The title of the footer links column with title=Projects in the footer"
+  },
+  "link.title.Docs": {
+    "message": "文档",
+    "description": "The title of the footer links column with title=Docs in the footer"
+  },
+  "link.title.Community": {
+    "message": "社区",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.item.label.colcon-xmake": {
+    "message": "colcon-xmake",
+    "description": "The label of footer link with label=colcon-xmake linking to https://github.com/ros-x/colcon-xmake"
+  },
+  "link.item.label.ament_xmake": {
+    "message": "ament_xmake",
+    "description": "The label of footer link with label=ament_xmake linking to https://github.com/ros-x/ament_xmake"
+  },
+  "link.item.label.ros2_xmake_examples": {
+    "message": "ros2_xmake_examples",
+    "description": "The label of footer link with label=ros2_xmake_examples linking to https://github.com/ros-x/ros2_xmake_examples"
+  },
+  "link.item.label.colcon-fish": {
+    "message": "colcon-fish",
+    "description": "The label of footer link with label=colcon-fish linking to https://github.com/ros-x/colcon-fish"
+  },
+  "link.item.label.Quick Start": {
+    "message": "快速开始",
+    "description": "The label of footer link with label=Quick Start linking to /docs/ros2-xmake/intro"
+  },
+  "link.item.label.Migration Guide": {
+    "message": "迁移指南",
+    "description": "The label of footer link with label=Migration Guide linking to /docs/ros2-xmake/migration"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/ros-x"
+  },
+  "link.item.label.xlings": {
+    "message": "xlings",
+    "description": "The label of footer link with label=xlings linking to https://github.com/d2learn/xlings"
+  },
+  "copyright": {
+    "message": "Copyright © 2024-2026 ros-x 贡献者。使用 Docusaurus 构建。",
+    "description": "The footer copyright"
+  }
+}

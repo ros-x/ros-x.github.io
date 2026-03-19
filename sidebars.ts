@@ -11,6 +11,10 @@ const sidebars: SidebarsConfig = {
         'ros2-xmake/troubleshooting',
         'ros2-xmake/compatibility',
         'ros2-xmake/architecture',
+        'ros2-xmake/examples',
+        'ros2-xmake/cli-reference',
+        'ros2-xmake/rule-api',
+        'ros2-xmake/rosidl',
       ],
     },
     {
