@@ -9,7 +9,14 @@ title: Troubleshooting
 
 **Symptom:** Build fails with `Could not find 'xmake' executable in PATH`
 
-**Fix:** Ensure `xmake` is installed and in `PATH`. Verify with `which xmake`.
+**Fix:** Ensure `xmake` is installed and in `PATH`. You can install it quickly via [xlings](https://github.com/d2learn/xlings):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/d2learn/xlings/refs/heads/main/tools/other/quick_install.sh | bash
+xlings install xmake
+```
+
+Verify with `which xmake`.
 
 ## Toolchain shim intercepts `gcc` / `g++` / `ar`
 
