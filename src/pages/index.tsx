@@ -13,12 +13,12 @@ function HomepageHeader() {
       <div className="container">
         <Heading as="h1" className="hero__title">
           <Translate id="homepage.hero.title">
-            Build ROS 2 packages with xmake
+            使用 xmake 构建 ROS 2 软件包
           </Translate>
         </Heading>
         <p className="hero__subtitle">
           <Translate id="homepage.hero.subtitle">
-            Replace CMakeLists.txt with clean, readable xmake.lua — full ament integration, rosidl support, and CMake interoperability.
+            用简洁、可读的 xmake.lua 替代 CMakeLists.txt — 完整的 ament 集成、rosidl 支持和 CMake 互操作。
           </Translate>
         </p>
         <div className={styles.buttons}>
@@ -26,7 +26,7 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/ros2-xmake/intro">
             <Translate id="homepage.hero.getStarted">
-              Get Started
+              快速开始
             </Translate>
           </Link>
           <Link
@@ -34,7 +34,7 @@ function HomepageHeader() {
             href="https://github.com/ros-x"
             style={{marginLeft: '1rem'}}>
             <Translate id="homepage.hero.viewGithub">
-              View on GitHub
+              在 GitHub 上查看
             </Translate>
           </Link>
         </div>
@@ -46,24 +46,24 @@ function HomepageHeader() {
 const features = [
   {
     titleId: 'homepage.feature.plugAndPlay.title',
-    titleDefault: 'Plug-and-Play Build',
+    titleDefault: '即插即用构建',
     descriptionId: 'homepage.feature.plugAndPlay.description',
     descriptionDefault:
-      'add_rules("ament_xmake.package") replaces CMakeLists.txt. One rule handles package metadata, ament index, and CMake Config export.',
+      'add_rules("ament_xmake.package") 替代 CMakeLists.txt。一条规则处理包元数据、ament 索引和 CMake Config 导出。',
   },
   {
     titleId: 'homepage.feature.autoDeps.title',
-    titleDefault: 'Automatic Dependency Resolution',
+    titleDefault: '自动依赖解析',
     descriptionId: 'homepage.feature.autoDeps.description',
     descriptionDefault:
-      'add_ros_deps("rclcpp") recursively resolves include directories, compile definitions, and link flags from the ament index.',
+      'add_ros_deps("rclcpp") 递归解析 include 目录、编译定义和链接标志。',
   },
   {
     titleId: 'homepage.feature.rosidl.title',
-    titleDefault: 'Full rosidl Support',
+    titleDefault: '完整 rosidl 支持',
     descriptionId: 'homepage.feature.rosidl.description',
     descriptionDefault:
-      'Define .msg, .srv, and .action files — the pipeline generates C/C++ code, typesupport libraries, and CMake exports automatically.',
+      '定义 .msg、.srv 和 .action 文件 — 流水线自动生成 C/C++ 代码、typesupport 库和 CMake 导出。',
   },
 ];
 
@@ -96,25 +96,25 @@ const projects = [
   {
     title: 'colcon-xmake',
     descriptionId: 'homepage.project.colconXmake',
-    descriptionDefault: 'colcon plugin adding xmake build/test support for ROS 2 packages.',
+    descriptionDefault: '为 ROS 2 软件包添加 xmake 构建/测试支持的 colcon 插件。',
     link: 'https://github.com/ros-x/colcon-xmake',
   },
   {
     title: 'ament_xmake',
     descriptionId: 'homepage.project.amentXmake',
-    descriptionDefault: 'ROS 2 ament rule package for xmake-based packages.',
+    descriptionDefault: '用于 xmake 构建的 ROS 2 ament 规则包。',
     link: 'https://github.com/ros-x/ament_xmake',
   },
   {
     title: 'ros2_xmake_examples',
     descriptionId: 'homepage.project.examples',
-    descriptionDefault: 'Example packages and E2E integration tests.',
+    descriptionDefault: '示例软件包和端到端集成测试。',
     link: 'https://github.com/ros-x/ros2_xmake_examples',
   },
   {
     title: 'colcon-fish',
     descriptionId: 'homepage.project.colconFish',
-    descriptionDefault: 'Fish shell completions for colcon.',
+    descriptionDefault: 'colcon 的 Fish shell 支持。',
     link: 'https://github.com/ros-x/colcon-fish',
   },
 ];
@@ -144,7 +144,7 @@ function ProjectCard({
         <div className="card__footer">
           <Link className="button button--primary button--block" to={link}>
             <Translate id="homepage.project.viewOnGithub">
-              View on GitHub
+              在 GitHub 上查看
             </Translate>
           </Link>
         </div>
@@ -175,7 +175,7 @@ export default function Home(): JSX.Element {
           <div className="container">
             <Heading as="h2" className="text--center margin-bottom--lg">
               <Translate id="homepage.projects.title">
-                Projects
+                项目
               </Translate>
             </Heading>
             <div className="row">

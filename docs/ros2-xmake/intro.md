@@ -1,43 +1,43 @@
 ---
 sidebar_position: 1
-title: Quick Start
+title: 快速开始
 ---
 
-# Quick Start
+# 快速开始
 
-## Prerequisites
+## 前置条件
 
-- Ubuntu with ROS 2 Jazzy installed at `/opt/ros/jazzy`
-- [xmake](https://xmake.io) available in `PATH`
+- 安装了 ROS 2 Jazzy 的 Ubuntu 系统（位于 `/opt/ros/jazzy`）
+- [xmake](https://xmake.io) 已添加到 `PATH`
 - Python 3.10+
 
-### Install xmake via xlings
+### 通过 xlings 安装 xmake
 
-[xlings](https://github.com/d2learn/xlings) is a cross-platform package manager that can set up xmake (and other tools like Node.js) with one command:
+[xlings](https://github.com/d2learn/xlings) 是一个跨平台包管理器，可以一键安装 xmake（以及 Node.js 等其他工具）：
 
 ```bash
-# Install xlings
+# 安装 xlings
 curl -fsSL https://raw.githubusercontent.com/d2learn/xlings/refs/heads/main/tools/other/quick_install.sh | bash
 
-# Install xmake
+# 安装 xmake
 xlings install xmake
 ```
 
-On Windows (PowerShell):
+Windows (PowerShell)：
 ```powershell
 irm https://raw.githubusercontent.com/d2learn/xlings/refs/heads/main/tools/other/quick_install.ps1 | iex
 xlings install xmake
 ```
 
-## Setup
+## 配置
 
-Install the colcon-xmake plugin:
+安装 colcon-xmake 插件：
 
 ```bash
 pip install colcon-xmake
 ```
 
-Set up a workspace with examples:
+使用示例创建工作空间：
 
 ```bash
 mkdir -p ~/ros2_xmake_ws/src && cd ~/ros2_xmake_ws/src
@@ -45,7 +45,7 @@ git clone https://github.com/ros-x/ros2_xmake_examples.git .
 vcs import < ros2_xmake.repos
 ```
 
-## Build and test
+## 构建和测试
 
 ```bash
 cd ~/ros2_xmake_ws
@@ -55,8 +55,8 @@ colcon test --packages-select demo_xmake_cpp downstream_cmake_consumer
 colcon test-result --verbose
 ```
 
-## Related Projects
+## 相关项目
 
-- [colcon-xmake](https://github.com/ros-x/colcon-xmake) - colcon plugin for xmake
-- [ament_xmake](https://github.com/ros-x/ament_xmake) - ROS 2 build rules for xmake
-- [ros2_xmake_examples](https://github.com/ros-x/ros2_xmake_examples) - Example packages and E2E tests
+- [colcon-xmake](https://github.com/ros-x/colcon-xmake) - xmake 的 colcon 插件
+- [ament_xmake](https://github.com/ros-x/ament_xmake) - xmake 的 ROS 2 构建规则
+- [ros2_xmake_examples](https://github.com/ros-x/ros2_xmake_examples) - 示例包和端到端测试

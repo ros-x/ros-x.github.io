@@ -1,28 +1,28 @@
 ---
 sidebar_position: 3
-title: Troubleshooting
+title: 故障排查
 ---
 
-# Troubleshooting
+# 故障排查
 
-## `xmake` not found
+## 找不到 `xmake`
 
-**Symptom:** Build fails with `Could not find 'xmake' executable in PATH`
+**症状：** 构建失败，提示 `Could not find 'xmake' executable in PATH`
 
-**Fix:** Ensure `xmake` is installed and in `PATH`. You can install it quickly via [xlings](https://github.com/d2learn/xlings):
+**解决方法：** 确保 `xmake` 已安装并在 `PATH` 中。可以通过 [xlings](https://github.com/d2learn/xlings) 快速安装：
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/d2learn/xlings/refs/heads/main/tools/other/quick_install.sh | bash
 xlings install xmake
 ```
 
-Verify with `which xmake`.
+使用 `which xmake` 验证。
 
-## Toolchain shim intercepts `gcc` / `g++` / `ar`
+## 工具链 shim 拦截 `gcc` / `g++` / `ar`
 
-**Symptom:** Build fails with errors like `no version set for 'g++'` from a shim manager.
+**症状：** 构建失败，出现类似 `no version set for 'g++'` 的 shim 管理器错误。
 
-**Fix:** Force system toolchain:
+**解决方法：** 强制使用系统工具链：
 
 ```bash
 export PATH=/usr/bin:/bin:/usr/local/bin:$PATH
@@ -32,20 +32,20 @@ export AR=/usr/bin/ar RANLIB=/usr/bin/ranlib
 
 ## `unknown rule(ament_xmake.package)`
 
-**Symptom:** xmake cannot find the custom rule.
+**症状：** xmake 找不到自定义规则。
 
-**Fix:**
-- Ensure `ament_xmake` package is built first in the workspace
-- Ensure `AMENT_PREFIX_PATH` includes the workspace install prefix
+**解决方法：**
+- 确保 `ament_xmake` 包已在工作空间中先行构建
+- 确保 `AMENT_PREFIX_PATH` 包含工作空间的安装路径
 
-## PEP 668 install error for pip
+## PEP 668 pip 安装错误
 
-**Symptom:** `externally-managed-environment`
+**症状：** `externally-managed-environment`
 
-**Fix:** Use `pip install --break-system-packages colcon-xmake` or use a virtual environment.
+**解决方法：** 使用 `pip install --break-system-packages colcon-xmake` 或使用虚拟环境。
 
-## Downstream link target missing
+## 下游链接目标缺失
 
-**Symptom:** `demo_xmake_cpp::demo_xmake_cpp` not found
+**症状：** 找不到 `demo_xmake_cpp::demo_xmake_cpp`
 
-**Fix:** Rebuild `demo_xmake_cpp` and check that `install/demo_xmake_cpp/share/demo_xmake_cpp/cmake/demo_xmake_cppConfig.cmake` exists.
+**解决方法：** 重新构建 `demo_xmake_cpp`，检查 `install/demo_xmake_cpp/share/demo_xmake_cpp/cmake/demo_xmake_cppConfig.cmake` 是否存在。
