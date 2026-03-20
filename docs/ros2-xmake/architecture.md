@@ -1,49 +1,49 @@
 ---
 sidebar_position: 5
-title: Architecture
+title: ROS 依赖架构
 ---
 
-# ROS Deps Architecture
+# ROS 依赖架构
 
-## Goal
+## 目标
 
-Provide a package-oriented dependency API for xmake users:
+为 xmake 用户提供面向包的依赖 API：
 
 ```lua
 add_ros_deps("rclcpp", "geometry_msgs")
 ```
 
-without requiring manual `add_includedirs()/add_linkdirs()/add_links()` maintenance.
+无需手动维护 `add_includedirs()/add_linkdirs()/add_links()`。
 
-## Design
+## 设计
 
-Uses an index architecture:
+使用索引架构：
 
-- **Source of truth:** ROS CMake export metadata installed in each package
-- **colcon phase:** Generates a workspace-local Lua index file from `AMENT_PREFIX_PATH`
-- **xmake phase:** Consumes the generated index in `add_ros_deps(...)`
+- **数据源：** 每个包安装的 ROS CMake 导出元数据
+- **colcon 阶段：** 从 `AMENT_PREFIX_PATH` 生成工作空间本地的 Lua 索引文件
+- **xmake 阶段：** 在 `add_ros_deps(...)` 中消费生成的索引
 
-### Why this approach?
+### 为什么采用这种方式？
 
-- CMake exports already encode transitive dependencies and include/library hints
-- Index is generated at build time from current underlay/overlay
-- xmake only needs deterministic include/link/rpath application from normalized metadata
+- CMake 导出已经编码了传递依赖和 include/library 提示
+- 索引在构建时从当前 underlay/overlay 生成
+- xmake 只需从标准化元数据中确定性地应用 include/link/rpath
 
-## Components
+## 组件
 
-### 1. User API
+### 1. 用户 API
 
-`add_ros_deps(...)` available from the `ament_xmake.package` rule.
+`add_ros_deps(...)` 由 `ament_xmake.package` 规则提供。
 
-### 2. Resolver backend
+### 2. 解析器后端
 
-`colcon_xmake/task/xmake/build.py::_generate_ros_index_file(...)`:
-- Scans `AMENT_PREFIX_PATH` for package CMake extras
-- Outputs Lua table `_AMENT_XMAKE_ROS_INDEX` with include dirs, compile definitions, link flags, rpath dirs, dependencies
+`colcon_xmake/task/xmake/build.py::_generate_ros_index_file(...)`：
+- 扫描 `AMENT_PREFIX_PATH` 中的包 CMake extras
+- 输出 Lua 表 `_AMENT_XMAKE_ROS_INDEX`，包含 include 目录、编译定义、链接标志、rpath 目录和依赖关系
 
-### 3. xmake integration
+### 3. xmake 集成
 
-`xmake/rules/ament_xmake/package.lua` -- `add_ros_deps(...)`:
-- Normalizes package args
-- Recursively resolves dependencies
-- Applies include dirs / defines / ldflags / rpath to current target
+`xmake/rules/ament_xmake/package.lua` — `add_ros_deps(...)`：
+- 标准化包参数
+- 递归解析依赖
+- 将 include 目录 / 定义 / ldflags / rpath 应用到当前目标

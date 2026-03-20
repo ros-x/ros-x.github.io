@@ -17,14 +17,18 @@ const config: Config = {
   organizationName: 'ros-x',
   projectName: 'ros-x.github.io',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
+
+  markdown: {
+    format: 'detect',
+  },
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'zh-Hans'],
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans', 'en'],
     localeConfigs: {
-      en: { label: 'English', htmlLang: 'en' },
       'zh-Hans': { label: '简体中文', htmlLang: 'zh-Hans' },
+      en: { label: 'English', htmlLang: 'en' },
     },
   },
 
@@ -45,6 +49,49 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'colcon-xmake',
+        path: 'repos/colcon-xmake/docs',
+        routeBasePath: 'docs/colcon-xmake',
+        sidebarPath: './sidebars-colcon-xmake.ts',
+        editUrl: 'https://github.com/ros-x/colcon-xmake/tree/main/',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'ament-xmake',
+        path: 'repos/ament_xmake/docs',
+        routeBasePath: 'docs/ament-xmake',
+        sidebarPath: './sidebars-ament-xmake.ts',
+        editUrl: 'https://github.com/ros-x/ament_xmake/tree/main/',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'tutorials',
+        path: 'repos/ros2_xmake_examples/docs',
+        routeBasePath: 'docs/tutorials',
+        sidebarPath: './sidebars-tutorials.ts',
+        editUrl: 'https://github.com/ros-x/ros2_xmake_examples/tree/main/',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'colcon-fish',
+        path: 'repos/colcon-fish/docs',
+        routeBasePath: 'docs/colcon-fish',
+        sidebarPath: './sidebars-colcon-fish.ts',
+        editUrl: 'https://github.com/Sunrisepeak/colcon-fish/tree/main/',
+      },
+    ],
+  ],
+
   themeConfig: {
     image: 'img/social-card.png',
     colorMode: {
@@ -58,10 +105,16 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'ros2XmakeSidebar',
+          type: 'dropdown',
+          label: '文档',
           position: 'left',
-          label: 'Docs',
+          items: [
+            { type: 'docSidebar', sidebarId: 'ros2XmakeSidebar', label: '概览' },
+            { type: 'doc', docId: 'USAGE', docsPluginId: 'colcon-xmake', label: 'colcon-xmake' },
+            { type: 'doc', docId: 'RULE_SPEC', docsPluginId: 'ament-xmake', label: 'ament_xmake' },
+            { type: 'doc', docId: 'pubsub', docsPluginId: 'tutorials', label: '教程' },
+            { type: 'doc', docId: 'install', docsPluginId: 'colcon-fish', label: 'colcon-fish' },
+          ],
         },
         {
           href: 'https://github.com/ros-x',
@@ -78,7 +131,7 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Projects',
+          title: '项目',
           items: [
             {
               label: 'colcon-xmake',
@@ -99,20 +152,20 @@ const config: Config = {
           ],
         },
         {
-          title: 'Docs',
+          title: '文档',
           items: [
             {
-              label: 'Quick Start',
+              label: '快速开始',
               to: '/docs/ros2-xmake/intro',
             },
             {
-              label: 'Migration Guide',
+              label: '迁移指南',
               to: '/docs/ros2-xmake/migration',
             },
           ],
         },
         {
-          title: 'Community',
+          title: '社区',
           items: [
             {
               label: 'GitHub',
@@ -125,7 +178,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: 'Copyright \u00a9 2024-2026 ros-x contributors. Built with Docusaurus.',
+      copyright: 'Copyright © 2024-2026 ros-x 贡献者。使用 Docusaurus 构建。',
     },
     prism: {
       theme: prismThemes.github,

@@ -1,0 +1,12 @@
+[submodule "repos/colcon-xmake"]
+	path = repos/colcon-xmake
+	url = https://github.com/ros-x/colcon-xmake.git
+[submodule "repos/ament_xmake"]
+	path = repos/ament_xmake
+	url = https://github.com/ros-x/ament_xmake.git
+[submodule "repos/ros2_xmake_examples"]
+	path = repos/ros2_xmake_examples
+	url = https://github.com/ros-x/ros2_xmake_examples.git
+[submodule "repos/colcon-fish"]
+	path = repos/colcon-fish
+	url = https://github.com/Sunrisepeak/colcon-fish.git

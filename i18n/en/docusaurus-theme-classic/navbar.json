@@ -7,9 +7,9 @@
     "message": "ros-x Logo",
     "description": "The alt text of navbar logo"
   },
-  "item.label.Docs": {
-    "message": "文档",
-    "description": "Navbar item with label Docs"
+  "item.label.文档": {
+    "message": "Docs",
+    "description": "Navbar item with label 文档"
   },
   "item.label.GitHub": {
     "message": "GitHub",

@@ -1,0 +1,50 @@
+{
+  "homepage.hero.title": {
+    "message": "Build ROS 2 packages with xmake"
+  },
+  "homepage.hero.subtitle": {
+    "message": "Replace CMakeLists.txt with clean, readable xmake.lua — full ament integration, rosidl support, and CMake interoperability."
+  },
+  "homepage.hero.getStarted": {
+    "message": "Get Started"
+  },
+  "homepage.hero.viewGithub": {
+    "message": "View on GitHub"
+  },
+  "homepage.feature.plugAndPlay.title": {
+    "message": "Plug-and-Play Build"
+  },
+  "homepage.feature.plugAndPlay.description": {
+    "message": "add_rules(\"ament_xmake.package\") replaces CMakeLists.txt. One rule handles package metadata, ament index, and CMake Config export."
+  },
+  "homepage.feature.autoDeps.title": {
+    "message": "Automatic Dependency Resolution"
+  },
+  "homepage.feature.autoDeps.description": {
+    "message": "add_ros_deps(\"rclcpp\") recursively resolves include directories, compile definitions, and link flags from the ament index."
+  },
+  "homepage.feature.rosidl.title": {
+    "message": "Full rosidl Support"
+  },
+  "homepage.feature.rosidl.description": {
+    "message": "Define .msg, .srv, and .action files — the pipeline generates C/C++ code, typesupport libraries, and CMake exports automatically."
+  },
+  "homepage.project.colconXmake": {
+    "message": "colcon plugin adding xmake build/test support for ROS 2 packages."
+  },
+  "homepage.project.amentXmake": {
+    "message": "ROS 2 ament rule package for xmake-based packages."
+  },
+  "homepage.project.examples": {
+    "message": "Example packages and E2E integration tests."
+  },
+  "homepage.project.colconFish": {
+    "message": "Fish shell completions for colcon."
+  },
+  "homepage.project.viewOnGithub": {
+    "message": "View on GitHub"
+  },
+  "homepage.projects.title": {
+    "message": "Projects"
+  }
+}
